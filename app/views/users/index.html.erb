@@ -1,0 +1,16 @@
+<h1 align="center" >Ruby Bloggers</h1>
+<div class="center">
+  <% @users.each do |user| %>
+    <ul class="listing card center" >
+      <div class="card-img-top">
+        <li> <%= link_to gravatar_for(user), user_path(user) %> </li>
+      </div>
+      <div class="card-body">
+        <li class="article-title">
+          <%= link_to user.username, user_path(user) %>
+        </li>
+        <li class="card-text"><small> <%= pluralize(user.articles.count, "article") if user.articles %> </small></li>
+      </div>
+    </ul>
+  <% end %>
+</div>

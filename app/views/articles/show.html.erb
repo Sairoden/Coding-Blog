@@ -1,7 +1,21 @@
 <div class="card border-info mb-3">
   <h2 align="center" class="card-header"> Title: <%= @article.title %> </h2>
   <div class="card-body">
-    <h3 class="card-title center">Description:</h3>
+    <% if @article.user %>
+      <ul class="listing center" >
+        <div class="card-img-top">
+          <li>Created by: </li>
+          <li> <%= link_to gravatar_for(@article.user), user_path(@article.user) %> </li>
+        </div>
+        <div class="card-body">
+          <li class="article-title">
+            <%= link_to @article.user.username, user_path(@article.user) %>
+          </li>
+          <li class="card-text"><small> <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %> </small></li>
+        </div>
+      </ul>
+    <% end %>
+    <h3 class="card-title article-title center">Description:</h3>
     <p class="card-text"> <%= simple_format(@article.description) %> </p>
     <div class="article-actions">
       <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
