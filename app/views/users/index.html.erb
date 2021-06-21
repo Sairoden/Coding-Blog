@@ -1,8 +1,9 @@
-<h1 align="center" >Ruby Bloggers</h1>
+<h1 align="center" style="margin-bottom:2rem;">Ruby Bloggers</h1>
 <div class="center">
+  <%= will_paginate @clients, list_classes: %w(pagination justify-content-center)%>
   <% @users.each do |user| %>
-    <ul class="listing card center" >
-      <div class="card-img-top">
+    <ul class="listing card center offset-3 border-info" style="max-width: 35rem;">
+      <div class="card-img-top mt-4">
         <li> <%= link_to gravatar_for(user), user_path(user) %> </li>
       </div>
       <div class="card-body">
@@ -13,4 +14,5 @@
       </div>
     </ul>
   <% end %>
+  <%= will_paginate @clients, list_classes: %w(pagination justify-content-center)%>
 </div>

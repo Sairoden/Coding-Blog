@@ -6,5 +6,10 @@
 </div>
 
 <h4 class="center"> <%= @user.username %>'s articles </h4>
-
-<%= render "articles/article", obj: @user.articles %>
+<div class="center">
+  <%= will_paginate @clients, list_classes: %w(pagination justify-content-center)%>
+</div>
+<%= render "articles/article", obj: @users %>
+<div class="center">
+  <%= will_paginate @clients, list_classes: %w(pagination justify-content-center)%>
+</div>
