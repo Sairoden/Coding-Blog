@@ -91,6 +91,18 @@ footer {
   }
 }
 
+.badge {
+  background-color: #cef6f5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
 .article-meta-details {
   border-top: 1px solid #eaeaea;
   margin-top: 15px;
