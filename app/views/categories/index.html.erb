@@ -1,0 +1,13 @@
+<h1 class="center mt-5 mb-4">Listing all categories</h1>
+<%= will_paginate @clients, list_classes: %w(pagination justify-content-center)%>
+<% @categories.each do |category| %>
+  <ul class="listing card center offset-3 border-info" style="max-width: 35rem;"> 
+    <div class="card-body">
+      <li class="article-title">
+        <%= link_to "#{category.name}", category_path(category) %>
+      </li>
+    </div>
+  </ul>
+<% end %>
+<%= will_paginate @clients, list_classes: %w(pagination justify-content-center)%>
+
